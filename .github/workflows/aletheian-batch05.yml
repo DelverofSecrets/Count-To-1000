@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build batch
-        run: python3 aletheian-library/build_batch05.py
+        run: python3 aletheian-library/run_batch05.py
       - name: Upload batch archive
         uses: actions/upload-artifact@v4
         with:
