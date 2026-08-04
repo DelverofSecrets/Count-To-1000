@@ -1,0 +1,17 @@
+name: Build Aletheian Final 14
+on:
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 aletheian-library/build_final14_stable.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Aletheian_Library_EPUB_Final_14
+          path: |
+            dist/Aletheian_Library_EPUB_Final_14_Books.zip
+            dist/Aletheian_Library_EPUB_Final_14_Books.zip.sha256
